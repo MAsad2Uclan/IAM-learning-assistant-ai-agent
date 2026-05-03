@@ -34,3 +34,16 @@ Publishing was not possible due to licensing restrictions, but the agent was ful
 
 ## Author
 Asad Majeed
+
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+    User -->|Ask Question| Copilot[Copilot Studio Agent]
+    Copilot --> Instructions[Agent Instructions]
+    Copilot --> Knowledge[Knowledge Sources]
+    Knowledge --> MS[Microsoft Learn]
+    Knowledge --> NIST[NIST]
+    Knowledge --> OWASP[OWASP]
+    Copilot --> Response[Generated Response]
+    Response --> User
